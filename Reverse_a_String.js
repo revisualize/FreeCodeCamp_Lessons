@@ -1,6 +1,10 @@
+const revserseString = s => s.split("").reverse().join("");
+
+/*
 function reverseString(str) {
   return str.split('').reverse().join('');
 }
+*/
 reverseString("hello"); // should return a string.
 reverseString("hello"); // should become "olleh".
 reverseString("Howdy"); // should become "ydwoH".
