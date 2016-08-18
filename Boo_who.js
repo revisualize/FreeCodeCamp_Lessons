@@ -1,4 +1,7 @@
 const booWho = (bool) => (typeof bool) === "boolean";
+// Two other ways to solve it:
+// const booWho = (bool) => Boolean(bool) === bool;
+// const booWho = (bool) => !!bool === bool;
 
 /*
 function booWho(bool) {
