@@ -1,5 +1,9 @@
 const titleCase = str => str.split(" ").map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(" ");
 
+// Solution using Regex with the String.replace() method:
+// const titleCase = s => s.toLowerCase().replace(/^\w|\s\w/g, (u) => u.toUpperCase());
+// /^\w|\s\w/g ... ^\w is the first character, \s\w is the character after space and /g is Global Search
+
 /*
 function titleCase(str) {
   stringArray = str.toLowerCase().split(" ");
