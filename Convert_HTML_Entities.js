@@ -1,13 +1,14 @@
-function convertHTML(str) {
-  // &colon;&rpar;
-  const htmlChars = {
+var htmlChars = {
+      "'": "&apos;",
+      '"': "&quot;", // tricky. :)
       "<": "&lt;",
       ">": "&gt;",
-      "'": "&apos;",
-      '"': "&quot;",
-      "&": "&amp;"
+      "&": "&amp;",
    };
-  let regex = new RegExp("[" + Object.keys(htmlChars).join("") + "]", "g");
+
+function convertHTML(str) {
+  // &colon;&rpar;
+  let regex = new RegExp("[" + Object.keys(htmlChars).join("") + "|^A-Za-z0-9"]", "g");
   return str.replace(regex, (x) => htmlChars[x]);
 }
 
