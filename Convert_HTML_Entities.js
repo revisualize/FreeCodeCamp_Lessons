@@ -8,7 +8,7 @@ var htmlChars = {
 
 function convertHTML(str) {
   // &colon;&rpar;
-  let regex = new RegExp("[" + Object.keys(htmlChars).join("") + "|^A-Za-z0-9"]", "g");
+  let regex = new RegExp("[" + Object.keys(htmlChars).join("") + "]", "g");
   return str.replace(regex, (x) => htmlChars[x]);
 }
 
