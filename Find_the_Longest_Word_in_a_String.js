@@ -5,14 +5,14 @@ const findLongestWord = (str) => str.replace(/[^A-Z0-9 -]/gi, "").split(" ").red
 */
 /*
 function findLongestWord(str) {
-  return str.replace(/[^A-Z0-9 ]/gi, "").split(" ").reduce((a, b) => b.length > a ? b.length : a, 0);
+  return str.replace(/[^A-Z0-9 -]/gi, "").split(" ").reduce((a, b) => b.length > a ? b.length : a, 0);
 }
 */
 /* Two different refactors below:
 
 function findLongestWord (str) {
   var l = 0;
-  str.replace(/[\W_]/g, " ").split(" ").forEach(function (x) {if (x.length > l) { l = x.length; }});
+  str.replace(/[^A-Z0-9 -]/gi, " ").split(" ").forEach(function (x) {if (x.length > l) { l = x.length; }});
   return l;
 }
 
