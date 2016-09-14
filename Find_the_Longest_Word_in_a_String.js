@@ -43,3 +43,18 @@ findLongestWord("What is the average airspeed velocity of an unladen swallow");
           // should return 8.
 findLongestWord("What if we try a super-long word such as otorhinolaryngology");
           // should return 19.
+
+
+/* Another option for this lesson:
+
+function findLongestWord(str) {
+  var longestWord = "";
+  str.split(" ").forEach(function (x) {
+      if(x.length > longestWord.length){
+        longestWord = x;
+    }});
+  return longestWord.length;
+}
+findLongestWord("The quick brown fox jumped over the lazy dog");
+
+*/
