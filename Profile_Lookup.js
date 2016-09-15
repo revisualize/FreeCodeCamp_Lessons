@@ -78,6 +78,27 @@ function lookUpProfile(firstName, prop){
 }
 */
 
+/* Another way to solve the challenge:
+
+function lookUpProfile(firstName, prop){
+  var result = "No such contact";
+  for (var i=0; i<contacts.length; i++) {
+    var contact = contacts[i];
+    if (contact.firstName===firstName) {
+      if (contact.hasOwnProperty(prop)) {
+        result = contact[prop];
+        break;
+      }
+      else result = "No such property";
+      break;
+    }
+  }
+  return result;
+}
+
+*/
+
+
 // Change these values to test your function
 lookUpProfile("Kristian", "lastName"); // should return "Vos"
 lookUpProfile("Sherlock", "likes"); // should return ["Intriguing Cases", "Violin"]
