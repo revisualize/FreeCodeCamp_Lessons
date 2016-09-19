@@ -1,3 +1,6 @@
+const mutation = (arr) => arr[1].toLowerCase().split('').every(x => arr[0].toLowerCase().split('').indexOf(x) !== -1);
+
+/* Original Code
 function mutation(arr) {
   var firstStr = arr[0].toLowerCase();
   var secondStr = arr[1].toLowerCase();
@@ -8,7 +11,7 @@ function mutation(arr) {
   }
   return true;
 }
-
+*/
 
 mutation(["hello", "hey"]); // should return false.
 mutation(["hello", "Hello"]); // should return true.
