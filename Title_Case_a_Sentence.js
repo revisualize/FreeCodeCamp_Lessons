@@ -1,4 +1,4 @@
-const titleCase = str => str.split(" ").map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(" ");
+const titleCase = str => str.toLowerCase().split(" ").map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(" ");
 
 // Solution using Regex with the String.replace() method:
 // const titleCase = s => s.toLowerCase().replace(/^\w|\s\w/g, (u) => u.toUpperCase());
