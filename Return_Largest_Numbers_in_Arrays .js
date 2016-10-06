@@ -1,5 +1,5 @@
 // jshint esversion:6
-largestOfFour = arr => arr.map(x => Math.max(...x));
+const largestOfFour = arr => arr.map(x => Math.max(...x));
 /*
 function largestOfFour(arr) {
  return arr.map(x => Math.max(...x));
