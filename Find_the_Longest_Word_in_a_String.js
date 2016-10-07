@@ -7,7 +7,22 @@ const findLongestWord = (str) => str.replace(/[^A-Z0-9 -]/gi, "").split(" ").red
 function findLongestWord(str) {
   return str.replace(/[^A-Z0-9 -]/gi, "").split(" ").reduce((a, b) => b.length > a ? b.length : a, 0);
 }
+
+On October 7, 2016, I forgot that I had the above code and someone asked in the FreeCodeCamp/HelpJavaScript room
+if this challenge could be solved with reduce. I wrote this:
+
+function findLongestWord(str) {
+	 return str.split(" ").reduce(function (pre, curr) { 
+	 	                    if (curr.length > pre) { 
+	 	                    	return curr.length 
+	 	                    } 
+	 	                    else { 
+	 	                    	return pre;
+	 	                    } }, 0);
+}
+
 */
+
 /* Two different refactors below:
 
 function findLongestWord (str) {
