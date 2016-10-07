@@ -14,7 +14,7 @@ if this challenge could be solved with reduce. I wrote this:
 function findLongestWord(str) {
 	 return str.split(" ").reduce(function (pre, curr) { 
 	 	                    if (curr.length > pre) { 
-	 	                    	return curr.length 
+	 	                    	return curr.length; 
 	 	                    } 
 	 	                    else { 
 	 	                    	return pre;
