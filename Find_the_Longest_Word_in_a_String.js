@@ -12,7 +12,7 @@ On October 7, 2016, I forgot that I had the above code and someone asked in the 
 if this challenge could be solved with reduce. I wrote this:
 
 function findLongestWord(str) {
-	 return str.split(" ").reduce(function (pre, curr) { 
+   return str.split(" ").reduce(function (pre, curr) { 
 	 	                    if (curr.length > pre) { 
 	 	                    	return curr.length; 
 	 	                    } 
