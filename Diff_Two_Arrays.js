@@ -6,6 +6,10 @@ function diffArray(arr1, arr2) {
   }));
 }
 
+/*
+function diffArray (arr1, arr2) { return arr1.filter(n => !arr2.includes(n)).concat(arr2.filter(n => !arr1.includes(n))); }
+*/
+
 diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); // should return an array.
 
 diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], 
