@@ -3,7 +3,7 @@ function palindrome(str) {
   return str === str.split("").reverse().join("");
 }
 /* This is an ES6 solution that does not follow the D.R.Y. principle.
-const palindrome = (str) =>  str.toLowerCase().replace(/[\W_]/g, "") === str.toLowerCase().replace(/[\W_]/g, "").split("").reverse().join("");
+const palindrome = s =>  s.toLowerCase().replace(/[\W_]/g, "") === s.toLowerCase().replace(/[\W_]/g, "").split("").reverse().join("");
 */
 palindrome("eye");                             // Should return true.
 palindrome("race car");                        // Should return true.
