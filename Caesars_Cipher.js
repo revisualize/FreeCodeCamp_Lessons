@@ -1,3 +1,10 @@
+function rot13 (str) {
+  return str.replace(/[A-Z]/g, function (x) {
+    return x.charCodeAt(0) > 77 ? String.fromCharCode(x.charCodeAt(0) - 13) : String.fromCharCode(x.charCodeAt(0) + 13);
+  });
+}
+
+/* Refactored from my old code on Jan 18, 2016
 function rot13(str) {
   var decodedArr = [];
   for (var i = 0; i < str.length; i++) {
@@ -19,7 +26,7 @@ function rot13(str) {
   }
   return decodedArr.join("");
 }
-
+*/
 
 rot13("SERR PBQR PNZC"); // Should decode to "FREE CODE CAMP"
 rot13("SERR CVMMN!"); // Should decode to "FREE PIZZA!"
