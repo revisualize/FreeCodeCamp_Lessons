@@ -40,7 +40,7 @@ function updateRecords(id, prop, value) {
 
  // If prop is "tracks" and value isn't blank, 
  // push the value onto the end of the album's existing tracks array.
-  else if (prop === "tracks" && value !== "") {
+  if (prop === "tracks" && value !== "") {
    // If prop is "tracks" but the album doesn't have a "tracks" property, 
    // create an empty array before adding the new value to the album's 
    // corresponding property.
@@ -52,7 +52,7 @@ function updateRecords(id, prop, value) {
 
  // If value is blank, 
  // delete that property from the album.
-  else if (value === "") {
+  if (value === "") {
     delete collection[id][prop];
   }
 
