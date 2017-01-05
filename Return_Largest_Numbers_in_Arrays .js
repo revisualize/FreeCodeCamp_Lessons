@@ -5,6 +5,7 @@ function largestOfFour(arr) {
  return arr.map(x => Math.max(...x));
 }
 
+
 Without using ES6
 
 function largestOfFour(arr) { return arr.map(function (x) { return Math.max.apply(null, x); }); }
@@ -17,6 +18,15 @@ largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001,
 
 
 /* My old code below:
+
+function largestOfFour(arr) {
+  for (var i = 0 , result = []; i < arr.length; i++) {
+     result.push(Math.max(...arr[i]));
+  }
+  return result;
+}
+
+
 function largestOfFour(arr) {
   var pushArray = [];
   for (var i = 0; i < arr.length; i++) {
