@@ -55,26 +55,25 @@ function lookUpProfile(firstName, prop){
 // A lookUpProfile function that takes firstName 
 // and a property (prop) as arguments has been pre-written for you.
 function lookUpProfile(firstName, prop){
-  for (var i=0; i < contacts.length; i++){
-    // The function should check if firstName 
-    // is an actual contact's firstName 
-    if (contacts[i]["firstName"] == firstName) {
-      // and the given property (prop) is a property of that contact.
-      if(contacts[i].hasOwnProperty(prop)) {
-        // If both are true, 
-        // then return the "value" of that property.
-        return contacts[i][prop]; 
-      }
-      else {
-        // If prop does not correspond to any valid properties
-        // then return "No such property".
-        return "No such property";
-      }
-    }
-  }
-  // If firstName does not correspond to "any" contacts (key word is any)
-  // then return "No such contact"
-  return "No such contact";
+   for (var i=0; i < contacts.length; i++){
+      // The function should check if firstName 
+      // is an actual contact's firstName 
+      if (contacts[i]["firstName"] == firstName) {
+         // and the given property (prop) is a property of that contact.
+         if(contacts[i].hasOwnProperty(prop)) {
+             // If both are true, 
+             // then return the "value" of that property.
+             return contacts[i][prop]; 
+          } else {
+             // If prop does not correspond to any valid properties
+             // then return "No such property".
+             return "No such property";
+          }
+       }
+   }
+   // If firstName does not correspond to "any" contacts (key word is any)
+   // then return "No such contact"
+   return "No such contact";
 }
 */
 
