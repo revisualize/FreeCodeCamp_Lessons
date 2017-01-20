@@ -1,7 +1,7 @@
 function dropElements(arr, func) {
-  // Drop them elements.
-  while(func(arr[0]) === false) { 
-      arr.shift(); // potential broswer crash
+  while (arr.length > 0) {
+     if (func(arr[0])) { break; }
+     arr.shift();
   }
   return arr;
 }
