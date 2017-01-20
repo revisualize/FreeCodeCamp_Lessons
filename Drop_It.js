@@ -1,4 +1,14 @@
 function dropElements(arr, func) {
+  // Drop them elements.
+  while(func(arr[0]) === false) { 
+      arr.shift(); // potential broswer crash
+  }
+  return arr;
+}
+
+
+/*
+function dropElements(arr, func) {
    var i = 0;
    while (i === 0 && arr.length > 0) {
       if (!func(arr[0]) && arr.length > 0) {
@@ -10,6 +20,7 @@ function dropElements(arr, func) {
    }
    return arr;
 }
+*/
 
 /*
 function dropElements(arr, func) {
