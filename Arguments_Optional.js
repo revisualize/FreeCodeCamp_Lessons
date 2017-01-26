@@ -1,18 +1,22 @@
 function addTogether() {
-  if (arguments.length === 2 &&
-      typeof arguments[0] === "number" &&
-          typeof arguments[1] === "number") {
-              return arguments[0] + arguments[1];
-  }
-  if (arguments.length === 1 &&
-      typeof arguments[0] === "number") {
-              var arg0 = arguments[0];
-              return function() {
-                  if (typeof arguments[0] === "number") {
-                      return arg0 + arguments[0];
-                  }
-                };
-  }
+    if (arguments.length === 2 &&
+        typeof arguments[0] === "number" &&
+            !Number.isNaN(arguments[0]) &&
+                typeof arguments[1] === "number" &&
+                    !Number.isNaN(arguments[1])) {
+                        return arguments[0] + arguments[1];
+      }
+    if (arguments.length === 1 &&
+        typeof arguments[0] === "number" &&
+            !Number.isNaN(arguments[0])) {
+                var arg0 = arguments[0];
+                return function() {
+                    if (typeof arguments[0] === "number" &&
+                        !Number.isNaN(arguments[0])) {
+                            return arg0 + arguments[0];
+                    }
+                 };
+    }
 }
 /* I didn't really like the flow of the code below.
    So, I refactored to what is above. */
