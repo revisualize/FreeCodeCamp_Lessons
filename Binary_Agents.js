@@ -1,4 +1,9 @@
 function binaryAgent(str) {
+  return str.split(" ").map(x => String.fromCharCode(parseInt(x, 2))).join("");
+}
+
+/* The 2**(7-i) causes some issues with runs.
+function binaryAgent(str) {
   var arr = str.split(" ");
   function bin2dec(bin) {
     var dec = 0;
@@ -9,8 +14,9 @@ function binaryAgent(str) {
   }
   return arr.map(x => String.fromCharCode(bin2dec(x))).join("");
 }
+*/
 
-/*
+/* This is code that I put together just to get it to work:
 function binaryAgent(str) {
   var arr = str.split(" ");
   function bin2dec(bin) {
