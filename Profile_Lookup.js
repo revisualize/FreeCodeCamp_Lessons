@@ -113,7 +113,7 @@ lookUpProfile("Akira", "address"); // should return "No such property"
     (Even thought is uses nested ternary operators)
 
 function lookUpProfile(firstName, prop) {
-  var contact = contacts.find(c => c.firstName === firstName);
+  var contact = contacts.find(x => x.firstName === firstName);
   return contact ? contact.hasOwnProperty(prop) ? contact[prop] : 'No such property' : 'No such contact';
 }
 
