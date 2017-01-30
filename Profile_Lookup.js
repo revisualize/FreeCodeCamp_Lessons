@@ -105,3 +105,16 @@ lookUpProfile("Sherlock", "likes"); // should return ["Intriguing Cases", "Violi
 lookUpProfile("Harry","likes"); // should return an array
 lookUpProfile("Bob", "number"); // should return "No such contact"
 lookUpProfile("Akira", "address"); // should return "No such property"
+
+
+/*  I am putting this down here because
+    it is a bit of a more complicated 
+    solution that works quite well:
+    (Even thought is uses nested ternary operators)
+
+function lookUpProfile(firstName, prop) {
+  var contact = contacts.find(c => c.firstName === firstName);
+  return contact ? contact.hasOwnProperty(prop) ? contact[prop] : 'No such property' : 'No such contact';
+}
+
+*/
