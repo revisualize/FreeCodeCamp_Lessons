@@ -117,4 +117,9 @@ function lookUpProfile(firstName, prop) {
   return contact ? contact.hasOwnProperty(prop) ? contact[prop] : 'No such property' : 'No such contact';
 }
 
+
+// Another:
+
+  return contacts.reduce(function(a, c) {return a ? a : (c.firstName === firstName ? (c.hasOwnProperty(prop) ? c[prop] : "No such property") : "");}, "") || "No such contact";
+
 */
