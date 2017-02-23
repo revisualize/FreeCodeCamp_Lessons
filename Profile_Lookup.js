@@ -122,4 +122,22 @@ function lookUpProfile(firstName, prop) {
 
   return contacts.reduce(function(a, c) {return a ? a : (c.firstName === firstName ? (c.hasOwnProperty(prop) ? c[prop] : "No such property") : "");}, "") || "No such contact";
 
+
+// Another solution using for...of
+// this is kind of like the first but, a little cleaner.
+
+function lookUpProfile(firstName, prop){
+// Only change code below this line
+    for (let contact of contacts) {
+      if (Boolean(contact.firstName === firstName)) {
+          if (Boolean(contact.hasOwnProperty(prop))) {
+              return contact[prop];
+          }
+          return "No such property";
+      }
+    }
+    return "No such contact";
+// Only change code above this line
+}
+
 */
