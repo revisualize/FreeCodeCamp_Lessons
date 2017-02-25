@@ -1,3 +1,10 @@
+function pairElement(str){
+  var pairs = {A:'T', T: 'A', C: 'G', G: 'C'};
+  return str.split("").map(x => [x,pairs[x]]);
+}
+
+
+/* 
 function pairElement(str) {
   var result = [];
   for (var i = 0; i < str.length; i += 1) {
@@ -13,6 +20,7 @@ function pairElement(str) {
   }
   return result;
 }
+*/
 
 pairElement("GCG"); // should return [["G", "C"], ["C","G"],["G", "C"]]
 pairElement("ATCGA"); // should return [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]].
