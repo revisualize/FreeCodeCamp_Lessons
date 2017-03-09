@@ -1,6 +1,12 @@
 // My solution for https://www.freecodecamp.com/challenges/sorted-union
 
+function uniteUnique(arr) { 
+    return [].concat(...arguments).filter((el,index,arr) => arr.indexOf(el) == index); 
+}
+
+/*
 const uniteUnique = arr => [].concat(...arguments).reduce((acc, pre) => (acc.indexOf(pre) === -1) ? (acc.push(pre), acc) : acc, []);
+*/
 
 /*
 function uniteUnique(arr) {
