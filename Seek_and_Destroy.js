@@ -47,4 +47,19 @@ function destroyer(arr) {
     var remove = Array.from(arguments).slice(1);
     return arr.filter(v => !remove.includes(v));
 }
+
+Side note: using .slice() has browser optimization problems.
+A better solution would be to look at doing:
+remove = [...arguments];
+remove = remove.shift(), remove;
+
+
+
+function destroyer(arr) {
+  return arr.filter(function(val) {
+    return Array.prototype.indexOf.call(this,val,1)===-1;
+  },arguments);
+}
+
+
 */
