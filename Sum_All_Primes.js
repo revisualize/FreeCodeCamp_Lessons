@@ -1,21 +1,24 @@
 // My solution for https://www.freecodecamp.com/challenges/sum-all-primes
 
 function sumPrimes(num) {
-  if (num<=1) return 0;
-  if (num===2) return 2;
+  if (num <= 1) return 0;
+  if (num === 2) return 2;
   var primes = [2];
   var total = 2;
   for (var i=3; i <= num; i += 2) {
     if (isPrime(i)) {
-      primes.push(i);
       total += i;
+      primes.push(i);
     }
   } 
   return total;
   
   function isPrime(p) {
+    if (p === 2 || p === 3 || p === 5 || p === 7) return true;
+    if (p % 2 === 0 || p % 3 === 0 || p % 5 === 0 || p % 7 === 0) return false;
+        // the above code eliminates a large set of numbers.
     var sqrt = Math.ceil(Math.sqrt(p));
-    for (var j=0; j < primes.length && primes[j] <= sqrt; j++) {
+    for (var j = 0; j < primes.length && primes[j] <= sqrt; j++) {
       if (p % primes[j]===0) return false;
     }
     return true;
@@ -23,10 +26,28 @@ function sumPrimes(num) {
 }
 
 console.time();
-sumPrimes(500000);
+console.log(sumPrimes(500000));
 console.timeEnd();
 // default: 40.899ms
 
+
+/* Notes: (In no order)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+    // added above because one of my earlier solutions I was going to try using this and found the code sample for primes
+http://www.stoimen.com/blog/2012/05/08/computer-algorithms-determine-if-a-number-is-prime/
+http://stackoverflow.com/questions/1032427/efficient-storage-of-prime-numbers
+http://stackoverflow.com/questions/1801391/what-is-the-best-algorithm-for-checking-if-a-number-is-prime
+https://www.topcoder.com/community/data-science/data-science-tutorials/mathematics-for-topcoders/
+https://en.wikipedia.org/wiki/Primality_test
+https://en.wikipedia.org/wiki/AKS_primality_test
+
+Sieve of Eratosthenes has complexity O(n * (log n) * (log log n)) and requires O(n) memory 
+https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Algorithm_complexity_and_implementation
+
+https://en.wikipedia.org/wiki/Sieve_of_Atkin
+
+*/
 
 
 /* My first solution is below:
