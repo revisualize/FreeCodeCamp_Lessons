@@ -1,4 +1,15 @@
-const factorialize = (num) => (num === 0) ? 1 : num * factorialize(num -1);
+// This is a better implimentation:
+function factorialize (num) { 
+  if (typeof num != 'number' && num != Infinity && num != -Infinity) return NaN; // Error catching
+  if (num === 1 ) {
+    return 1;
+  }
+  return num * factorialize(num - 1);
+}
+
+
+// const factorialize = (num) => (num === 0) ? 1 : num * factorialize(num -1);
+
 /*
 function factorialize(num) {
   if (num === 0) {
