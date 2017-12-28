@@ -1,10 +1,20 @@
 // This is a better implimentation:
-function factorialize (num) { 
-  if (typeof num != 'number' && num != Infinity && num != -Infinity) return NaN; // Error catching
-  if (num === 1 ) {
-    return 1;
-  }
-  return num * factorialize(num - 1);
+// This implimentation works with 0, -0, pos and neg numbers.
+function factorial (num) {
+    if (typeof num != 'number' || num != Infinity || num != -Infinity) {
+      return NaN; // Error catching
+    }
+    let sign = Math.sign(num);
+    if (sign === -0) {
+      return -1;
+    }
+    if (sign <= 0) {
+      num *= -1;
+    }
+    if (num === 0) {
+        return 1;
+    }
+    return sign * num * factorial(num - 1);
 }
 
 
