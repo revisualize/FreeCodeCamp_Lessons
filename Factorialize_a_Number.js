@@ -1,18 +1,31 @@
-function factorial (num, accumulator = 1) {
+function factorial (num, sign, accumulator = 1) {
+    // This function returns 1 if the input is -0 because of coercion.
+    // Not really anything I can think of to fix that issue.
     if (typeof num != 'number' ||
                num == Infinity || 
                num == -Infinity ||
                num % 1 !== 0) {
         return NaN;
     }
+    if (sign === undefined) {
+      sign = Math.sign(num);
+      if (sign === -1) {
+          num *= -1;
+      }
+      if (sign === 0) {
+         sign = 1;
+      }
+      if (sign === -0) {
+          sign = -1;
+      }
+    }
+
     if (num === 0 || num === 1 || num === -1) {
-        return accumulator;
+        return sign * accumulator;
     }
-    if (num < 0) {
-        return factorial(num+1, accumulator*num);
-    }
+
     if (num > 0) {
-        return factorial(num-1, accumulator*num);
+        return factorial(num-1, sign, accumulator*num);
     }
 }
 
