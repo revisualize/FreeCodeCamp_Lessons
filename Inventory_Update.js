@@ -2,19 +2,18 @@ function updateInventory(arr1, arr2) {
     // All inventory must be accounted for or you're fired!
   
     var inventory = arr1.concat(arr2)
-                        .reduce( function ( obj , item ) {
+                        .reduce( function createObjFromArray ( obj , item ) {
                                       obj[item[1]] = (obj.hasOwnProperty(item[1])) ? obj[item[1]] + item[0] : item[0];
                                       return obj;
                                     }, {});
     
     return Object.keys( inventory )
-      .map( function ( key ) {
+      .map( function mapObjToArr ( key ) {
                 return [ Number(inventory[key]) , String(key) ];
             })
-      .sort( function ( a , b ) { 
+      .sort( function sortMultiDimArrayAlpha ( a , b ) { 
                 return a[1] > b[1]; 
             });  
-
 }
 
 // Example inventory lists
